@@ -1,0 +1,331 @@
+/* BODY */
+body {
+  background-color: rgba(19, 19, 19, 0.87);
+  color: #e0e0e0; 
+}
+
+.primary-title {
+  font-size: 4rem;
+  margin-top: 2rem;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #f5f5f5; 
+}
+/* NAV */
+
+/* TOP SECTION */
+
+/* refresh/generate new recipe item suggestions */
+.circular-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #FFA500; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  animation: gradientAnimation 5s ease infinite;
+  transition: all 0.3s ease;
+  margin-bottom: 20px; 
+  outline: none;
+}
+
+.circular-btn:focus {
+  outline: none;
+}
+
+.circular-btn:hover {
+  background-color: #FFD700; 
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+}
+
+.btn-icon {
+  width: 40px; 
+  height: 40px; 
+}
+
+/* RECIPE ITEMS */
+.recipe-item {
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  background-color: rgb(70, 70, 70); 
+  color: #e5e5e5; 
+}
+
+.recipe-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 30px 0 0 30px;
+}
+
+.recipe-item h4 {
+  color: #e0e0e0;
+}
+
+/* Checkerboard pattern */
+.recipe-item-container {
+  height: 100px;
+  cursor: pointer;
+}
+
+.recipe-item-container:nth-child(odd) {
+  visibility: visible;
+}
+
+.recipe-item-container:nth-child(even) {
+  visibility: visible;
+}
+
+
+/* Electric blue glow when clicked */
+.recipe-item.selected {
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Generate recommendation button */
+.generate-btn {
+  width: 100%;
+  max-width: 600px;
+  height: 80px;
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FF8C00);
+  background-size: 300% 100%;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  animation: gradientAnimation 5s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.generate-btn:focus {
+  outline: none;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.generate-btn:hover {
+  box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* BOTTOM SECTION */
+.default-card {
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FF8C00); /* Gold to yellow gradient */
+  height: 250px; /* Adjust height as necessary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.fork-icon {
+  font-size: 50px; /* Adjust size as necessary */
+  color: white; /* White color for the fork icon */
+  opacity: 0.8; /* Slight transparency */
+}
+
+
+
+/* RECOMMENDATION ITEMS */
+.recommendation-title {
+  font-size: 4rem;
+  margin-top: 2rem;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #e0e0e0; 
+}
+
+.card {
+  background-color: #333; /* Dark background for cards */
+  color: #e0e0e0; /* Light text color */
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  height: 250px; /* Fixed height for images */
+  object-fit: cover;
+}
+
+.carousel-recommendation {
+  max-height: 250px;
+}
+
+.carousel-recommendation:hover {
+  cursor: pointer;
+}
+
+.carousel-recommendation.default-card i {
+  color: #333; /* Set the color of the icon to dark */
+}
+
+.fork-icon {
+  color: #333;
+}
+
+
+/* individual recommended items styling */
+/* Styles for recipe name with transparent background */
+.recipe-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent background */
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 1.2rem;
+  font-family: "Kanit", sans-serif;
+}
+
+/* Styles for rating circle */
+.rating-circle {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  font-family: sans-serif;
+}
+
+.rating-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: -8px;
+}
+
+.rating-label {
+  font-size: 0.6rem;
+  color: black;
+  text-align: center;
+}
+
+
+/* modal */
+.modal {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+#recipeModalLabel {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* Center and scale the recipe image */
+.recipe-image {
+  max-width: 100%;
+  height: auto;
+}
+.recipe-text-container {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.recipe-text-container strong {
+  font-family: "Kanit", sans-serif;
+}
+
+/* Style for recipe facts */
+.recipe-facts p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Style for nutrition facts */
+.nutrition-facts .row {
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.nutrition-facts p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Style for description */
+.recipe-details-subtitles {
+  font-size: 1.25rem;
+}
+
+.description, .instructions {
+  line-height: 1.6;
+}
+
+/* Optional custom styles for stars */
+.fas.fa-star,
+.fas.fa-star-half-alt,
+.far.fa-star {
+  color: #FFD700; /* Gold color for stars */
+  margin-right: 2px;
+  font-size: 24px;
+}
+
+#recommended-items-section .fa-fork {
+  color: #333 !important;
+}
+
+  .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 200px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+
+  .img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  }
+
+  .recommended-item {
+    margin: 10px; /* Optional: add some margin around the card */
+  }
+
+  .rating-circle {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+
